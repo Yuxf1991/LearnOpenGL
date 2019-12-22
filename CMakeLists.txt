@@ -30,3 +30,4 @@ set(SRC_LIST ${GLAD_SRC} ${UTILS_SRC})
 # Chapter1: getting started
 set(Chapter1_PATH ${SOURCE_PATH}/Chapter1)
 add_executable(helloWindow ${Chapter1_PATH}/helloWindow/main.cpp ${SRC_LIST})
+add_executable(helloTriangle1 ${Chapter1_PATH}/helloTriangle/triangle1.cpp ${SRC_LIST})

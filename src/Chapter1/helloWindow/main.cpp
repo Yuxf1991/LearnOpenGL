@@ -16,7 +16,7 @@ int main() {
         exit(EXIT_FAILURE);
     }
 
-    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
+    if (!initGLAD()) {
         std::cout << "Failed to initialize GLAD" << std::endl;
         glfwTerminate();
         exit(EXIT_FAILURE);

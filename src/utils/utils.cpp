@@ -29,6 +29,10 @@ GLFWwindow *initWindow(const char *windowName) {
     return window;
 }
 
+int initGLAD() {
+    return gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+}
+
 void framebufferSizeCallback(GLFWwindow *window, int width, int height) {
     glViewport(0, 0, width, height);
 }

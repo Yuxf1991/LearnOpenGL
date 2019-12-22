@@ -64,8 +64,8 @@ KeepEmptyLinesAtTheStartOfBlocks: true
 BreakConstructorInitializersBeforeComma: true
 #括号后添加空格
 SpaceAfterCStyleCast: false
-# 允许排序#include, 造成编译错误
-# SortIncludes: true
+# 不允许排序#include, 以免造成编译错误
+SortIncludes: false
 # 缩进case 标签
 IndentCaseLabels: true
 #tab键盘的宽度

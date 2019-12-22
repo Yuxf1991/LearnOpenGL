@@ -6,12 +6,14 @@
 #define LEARNOPENGL_UTILS_H
 
 // include顺序不能乱
-#include <GLFW/glfw3.h>
 #include <glad/glad.h>
+#include <GLFW/glfw3.h>
 
 #include "config.h"
 
 GLFWwindow *initWindow(const char *windowName);
+
+int initGLAD();
 
 void framebufferSizeCallback(GLFWwindow *window, int width, int height);
 
