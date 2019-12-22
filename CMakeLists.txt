@@ -19,7 +19,7 @@ set(GLAD_PATH ${SOURCE_PATH}/ThirdParty/glad)
 include_directories(${SOURCE_PATH} ${GLFW_PATH}/include ${GLAD_PATH}/include)
 link_directories(${GLFW_PATH}/lib-mingw-w64)
 
-INSTALL(DIRECTORY ${RESOURCE_PATH} DESTINATION ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/resources)
+install(DIRECTORY ${RESOURCE_PATH} DESTINATION ${CMAKE_RUNTIME_OUTPUT_DIRECTORY})
 
 link_libraries(glfw3)
 
