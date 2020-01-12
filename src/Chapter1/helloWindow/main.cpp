@@ -8,7 +8,8 @@
 
 const char *WINDOW_NAME = "Hello Window!";
 
-int main() {
+int main()
+{
     std::cout << WINDOW_NAME << std::endl;
     GLFWwindow *window = initWindow(WINDOW_NAME);
 

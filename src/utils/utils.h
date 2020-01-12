@@ -9,14 +9,26 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
+#include <glm/glm.hpp>
+
 #include "config.h"
 
 GLFWwindow *initWindow(const char *windowName);
 
 int initGLAD();
 
+int initCamera();
+
 void framebufferSizeCallback(GLFWwindow *window, int width, int height);
 
-void processInput(GLFWwindow *window);
+void mouseCallback(GLFWwindow *window, double xPos, double yPos);
 
-#endif // LEARNOPENGL_UTILS_H
+void scrollCallback(GLFWwindow *window, double xOffset, double yOffset);
+
+void processInput(GLFWwindow *window, float deltaTime = 0.0f);
+
+float getViewZoom();
+
+glm::mat4 getViewMatrix();
+
+#endif  // LEARNOPENGL_UTILS_H

@@ -6,18 +6,22 @@
 #include <sstream>
 #include <iostream>
 
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+
 #include "utils.h"
 #include "Shader.h"
 
 const int MAX_LOG_LENGTH = 1024;
 
 Shader::Shader(std::string vertexPath, std::string fragmentPath)
-    : mVertexPath(std::move(vertexPath))
-    , mFragmentPath(std::move(fragmentPath))
-    , mId(0) {
+    : mVertexPath(std::move(vertexPath)), mFragmentPath(std::move(fragmentPath)), mId(0)
+{
 }
 
-int Shader::compile() {
+int Shader::compile()
+{
     std::string vertexCode;
     std::string fragmentCode;
     std::ifstream vShaderFile;
@@ -50,7 +54,7 @@ int Shader::compile() {
 
     unsigned int vertexShader, fragmentShader;
     int success;
-    char infoLog[ 512 ];
+    char infoLog[512];
 
     vertexShader = glCreateShader(GL_VERTEX_SHADER);
     glShaderSource(vertexShader, 1, &vShaderCode, nullptr);
@@ -88,22 +92,37 @@ int Shader::compile() {
     return 0;
 }
 
-void Shader::use() {
+void Shader::use()
+{
     glUseProgram(mId);
 }
 
-void Shader::setBool(const std::string &name, bool value) const {
+void Shader::setBool(const std::string &name, bool value) const
+{
     glUniform1i(glGetUniformLocation(mId, name.c_str()), (int)value);
 }
 
-void Shader::setInt(const std::string &name, int value) const {
+void Shader::setInt(const std::string &name, int value) const
+{
     glUniform1i(glGetUniformLocation(mId, name.c_str()), value);
 }
 
-void Shader::setFloat(const std::string &name, float value) const {
+void Shader::setFloat(const std::string &name, float value) const
+{
     glUniform1f(glGetUniformLocation(mId, name.c_str()), value);
 }
 
-void Shader::setDouble(const std::string &name, double value) const {
+void Shader::setDouble(const std::string &name, double value) const
+{
     glUniform1d(glGetUniformLocation(mId, name.c_str()), value);
+}
+
+void Shader::setVec3f(const std::string &name, float x, float y, float z) const
+{
+    glUniform3fv(glGetUniformLocation(mId, name.c_str()), 1, glm::value_ptr(glm::vec3(x, y, z)));
+}
+
+void Shader::setMat4f(const std::string &name, glm::mat4 matrix) const
+{
+    glUniformMatrix4fv(glGetUniformLocation(mId, name.c_str()), 1, GL_FALSE, glm::value_ptr(matrix));
 }
