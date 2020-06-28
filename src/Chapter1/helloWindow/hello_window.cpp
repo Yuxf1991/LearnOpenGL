@@ -17,7 +17,7 @@ int main()
         exit(EXIT_FAILURE);
     }
 
-    if (!initGLAD()) {
+    if (initGLAD() == -1) {
         std::cout << "Failed to initialize GLAD" << std::endl;
         glfwTerminate();
         exit(EXIT_FAILURE);

@@ -13,6 +13,7 @@ English tutorial website: https://learnopengl.com/
 英文教程网址: https://learnopengl.com/
 
 ## 2. Compile & Run
+git clone --recursive https://github.com/Yuxf1991/LearnOpenGL.git  
 This project has been tested on Windows 10 64bit, and the compile environment  
 is MinGW64 8.1.0, and use Clion to manage it.
  
@@ -23,9 +24,8 @@ is MinGW64 8.1.0, and use Clion to manage it.
 4. Tap "Run-->Run..." to select the execute program which you want.
 
 ## 2. 编译 & 运行
-本学习项目在Window10 64bit平台上测试可用，编译环境是MinGW64 8.1.0，使用Clion进行管理。
-
- 
+本学习项目在Window10 64bit平台上测试可用，编译环境是MinGW64 8.1.0，使用Clion进行管理。  
+git clone --recursive https://github.com/Yuxf1991/LearnOpenGL.git  
 1. 点击菜单栏 "File-->Settings-->Build, Execution, Deployment-->Toolchains"  
    选择您所使用的MinGW64的路径;
 2. 点击菜单栏 "Build-->Build Project" 进行编译;
