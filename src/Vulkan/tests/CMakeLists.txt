@@ -1,0 +1,5 @@
+add_executable(getAvailableLayersTest getAvailableLayersTest.cpp)
+target_link_libraries(getAvailableLayersTest vulkanBase)
+
+add_executable(getPhysicalDevicePropertiesTest getPhysicalDevicePropertiesTest.cpp)
+target_link_libraries(getPhysicalDevicePropertiesTest vulkanBase)
